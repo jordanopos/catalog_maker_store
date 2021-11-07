@@ -10,7 +10,6 @@ const Post = () => {
 
     const [loading, setLoading] = useState(true);
     const [displayName, setDisplayName] = useState(null);
-    const [counter, setCounter] = useState(0);
     const [products, setProducts] = useState(null);
 
 
