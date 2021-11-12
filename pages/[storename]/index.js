@@ -9,8 +9,8 @@ const Post = () => {
     const { storename } = router.query
 
     const [loading, setLoading] = useState(true);
-    const [displayName, setDisplayName] = useState(null);
-    const [products, setProducts] = useState(null);
+    const [store, setStore] = useState(null);
+    const [namestore, setStorename] = useState(null);
 
 
     useEffect(() => {
@@ -20,11 +20,9 @@ const Post = () => {
             fetch(`https://storelution.herokuapp.com/api/store/view/${storename}`).then(res => {
                 return res.json();
             }).then((data) => {
-                setDisplayName(data["store"]["store_name"])
-                setProducts(data["store"]["products"])
-
+                setStore(data.store);
+                setStorename(data.store.store_name);
                 setLoading(false);
-
             });
 
         } else {
@@ -32,25 +30,18 @@ const Post = () => {
         }
     }, [storename]);
 
-
-    
-
     return (
         <div className="">
             <Head>
-                <title>{displayName + " | Store made by Storelution"}</title>
+                <title>{ namestore + " | Store made with Storelution"}</title>
             </Head>
-
-
 
             {loading && <div>Loading...</div>}
 
-           { products && <div>
-
-
-                <NavBar displayName={displayName} />
+            {store && <div>
+                <NavBar displayName={store.store_name} />
                 {/* <Hero /> */}
-                <AllProducts products={products} storename={storename} />
+                <AllProducts store={store} />
             </div>}
 
         </div>

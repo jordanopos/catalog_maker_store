@@ -5,7 +5,7 @@ import { useState } from "react";
 const ProductDisplayComponent = ({ product, key, storename }) => {
     const [loaded , setLoaded] = useState(false);
     return (
-        <Link href={"/product/" + product.id}>
+        <Link href={ "/" + storename  +"/product/" + product.id}>
             <div className={ loaded ?"flex flex-col px-1 py-1" : "hidden"} key={key}>
                 <img 
                 onLoad={()=> setLoaded(true)}
