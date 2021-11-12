@@ -1,14 +1,15 @@
 import StackGrid from "react-stack-grid";
 import ProductDisplayComponent from "./ProductDisplay";
 
-const AllProducts = ({products, storename}) => {
+const AllProducts = ({ products, storename }) => {
     return (
-        <div className="pt-10">
-            <StackGrid columnWidth={190}  >
+        <div className="pt-10 px-4">
+            <div className="grid grid-cols-2">
                 {products.map((item) => (
                     <ProductDisplayComponent product={item} key={item.id} storename={storename} />
                 ))}
-            </StackGrid>
+
+            </div>
         </div>
 
     );
@@ -21,10 +22,25 @@ export default AllProducts;
 
 
 
+{/* <StackGrid columnWidth={190}   >
 
-    // const product_items = [
-    //     {
-    //         "id": 1,
+            </StackGrid> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //         "name": "Controller",
     //         "price": 3000,
     //         "image": "https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
