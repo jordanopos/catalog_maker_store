@@ -3,7 +3,7 @@ import ProductDisplayComponent from "./ProductDisplay";
 
 const AllProducts = ({ store }) => {
     return (
-        <div className="pt-5 px-4">
+        <div className="pt-5 px-7">
             <div className="grid grid-cols-2">
                 {store.products.map((item) => (
                     <ProductDisplayComponent product={item} key={item.id} storename={store.unique_name} />

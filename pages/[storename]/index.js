@@ -46,7 +46,6 @@ const Post = () => {
             {store && <div>
                 <NavBar displayName={store.store_name} />
                 <BigDisplayWidget product={store.products[getRandomInt(store.products.length)]} />
-                <BigDisplayWidget product={store.products[getRandomInt(store.products.length)]} />
                 <AllProducts store={store} />
             </div>}
 
