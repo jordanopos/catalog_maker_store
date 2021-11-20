@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export" : "next export"
+    "export": "next export"
   },
   "dependencies": {
     "commafy": "0.0.6",

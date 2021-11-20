@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import NavBar from '../../components/NavBar'
 import AllProducts from '../../components/Products'
+import BigDisplayWidget from '../../components/BigDisplayWidget'
 
 const Post = () => {
     const router = useRouter()
@@ -30,17 +31,22 @@ const Post = () => {
         }
     }, [storename]);
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
     return (
         <div className="">
             <Head>
-                <title>{ namestore + " | Store made with Storelution"}</title>
+                <title>{namestore + " | Store made with Storelution"}</title>
             </Head>
 
             {loading && <div>Loading...</div>}
 
             {store && <div>
                 <NavBar displayName={store.store_name} />
-                {/* <Hero /> */}
+                <BigDisplayWidget product={store.products[getRandomInt(store.products.length)]} />
+                <BigDisplayWidget product={store.products[getRandomInt(store.products.length)]} />
                 <AllProducts store={store} />
             </div>}
 

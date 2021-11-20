@@ -1,16 +1,16 @@
 import StackGrid from "react-stack-grid";
 import ProductDisplayComponent from "./ProductDisplay";
 
-const AllProducts = ({store}) => {
+const AllProducts = ({ store }) => {
     return (
-        <div className="pt-10 px-4">
+        <div className="pt-5 px-4">
             <div className="grid grid-cols-2">
                 {store.products.map((item) => (
                     <ProductDisplayComponent product={item} key={item.id} storename={store.unique_name} />
                 ))}
 
             </div>
-        </div> 
+        </div>
 
     );
 }
